@@ -19,7 +19,7 @@ class Empresa():
         iban += " "+str(randrange(10,99))
         iban += " "+str(randrange(1000000000,9999999999))
 
-        registro = (self.razonSocial+"-"+self.cif+"-"+iban+"-"+0,00)
+        registro = (self.razonSocial+"-"+self.cif+"-"+iban+"-"+"0,00"+"\n")
 
         with open('cuentas.txt', mode='a', encoding='utf-8')as archivo:
             archivo.write(registro)
