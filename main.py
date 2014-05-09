@@ -20,13 +20,13 @@ iban = ''
 saldo = 0
 
 if cliente.upper() == "SI":
-    print("Introduce nombre y apellidos o razon social")
-    identificacion = str(input())
-    print("Introduce nif o cif")
-    dni = str(input())
+    print("Introduce el nombre y apellidos o razon social")
+    titular = str(input())
+    print("Introduzca el nif o cif")
+    nif=str(input())
     print("1. Consultar saldo")
-    Transaccion.buscarCliente(identificacion)
-    transaccio = Transaccion(identificacion,dni,iban,saldo)
+    Transaccion.buscarCliente(titular, nif)
+    transaccio = Transaccion(titular,nif,iban,saldo)
 
 
     print("2. Transferencia")
