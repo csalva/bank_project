@@ -12,7 +12,7 @@ class Transaccion():
         with open('cuentas.txt', mode='r', encoding='utf-8')as archivo:
             for i in archivo:
                 nombreTitular,nif,numeroCuenta,saldoCuenta = i.split('-',4);
-                if nombreTitular == nombreTitular and nif == nif:
+                if self.nombreTitular == nombreTitular and self.nif == nif:
                     print(nombreTitular,nif,numeroCuenta,saldoCuenta)
                 else:
                     print("Error de identificacion")
