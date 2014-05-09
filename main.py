@@ -2,6 +2,7 @@ __author__ = 'cristina'
 
 from empresa import Empresa
 from particular import Particular
+from transacciones import Transaccion
 
 def menu():
     print("Bank Project")
@@ -14,12 +15,21 @@ def subMenu():
 menu()
 cliente = str(input())
 
+
+iban = ''
+saldo = 0
+
 if cliente.upper() == "SI":
+    print("Introduce nombre y apellidos o razon social")
+    identificacion = str(input())
+    print("Introduce nif o cif")
+    dni = str(input())
     print("1. Consultar saldo")
+    Transaccion.buscarCliente(identificacion)
+    transaccio = Transaccion(identificacion,dni,iban,saldo)
+
+
     print("2. Transferencia")
-
-
-
 
 elif cliente.upper() == "NO":
     subMenu()
@@ -38,13 +48,11 @@ elif cliente.upper() == "NO":
             empresa.crearCuenta()
 
         if tipoCuenta == 2:
-            print("Introduce Nombre")
+            print("Introduce Nombre y Apellidos")
             nombreParticular = str(input())
-            print("Introduce Apellidos")
-            apellidosParticular = str(input())
             print("Introduce NIF/NIE")
             nif = str(input())
-            particular = Particular(nombreParticular,apellidosParticular,nif)
+            particular = Particular(nombreParticular,nif)
             particular.crearCuenta()
 
 
